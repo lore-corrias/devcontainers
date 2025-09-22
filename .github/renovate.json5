@@ -1,51 +1,58 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:best-practices",
-    ":automergeStableNonMajor",
-    ":combinePatchMinorReleases",
-    ":enableVulnerabilityAlerts"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:best-practices',
+    ':automergeStableNonMajor',
+    ':combinePatchMinorReleases',
+    ':enableVulnerabilityAlerts',
   ],
-  "branchPrefix": "dependencies/",
-  "customManagers": [
+  branchPrefix: 'dependencies/',
+  customManagers: [
     {
-      "customType": "regex",
-      "managerFilePatterns": ["/^.*\\/packages\\/.*\\.json5$/"],
-      "matchStrings": [
-        "\\/\\/\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*\".*\"\\s*:\\s*\"(?<currentValue>.*)\"\\s*"
+      customType: 'regex',
+      managerFilePatterns: [
+        '/^.*\\/packages\\/.*\\.json5$/',
       ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
+      matchStrings: [
+        '\\/\\/\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*".*"\\s*:\\s*"(?<currentValue>.*)"\\s*',
+      ],
+      versioningTemplate: '{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}',
+    },
   ],
-
-  // grouping all kind of updates for images in single PRs
-  "packageRules": [
-    // devcontainer updates
+  packageRules: [
     {
-      "groupName": "devcontainer stack",
-      "groupSlug": "devcontainer",
-      "labels": ["stack:devcontainer"],
-      "matchManagers": ["dockerfile", "regex"],
-      "matchFileNames": [
-        "dockerfiles/devcontainer.dockerfile",
-        "packages/devcontainer/**",
+      groupName: 'devcontainer stack',
+      groupSlug: 'devcontainer',
+      labels: [
+        'stack:devcontainer',
       ],
-      "separateMajorMinor": false,
-      "prPriority": 10
+      matchManagers: [
+        'dockerfile',
+        'custom.regex',
+      ],
+      matchFileNames: [
+        'dockerfiles/devcontainer.dockerfile',
+        'packages/devcontainer/**',
+      ],
+      separateMajorMinor: false,
+      prPriority: 10,
     },
-    // ctfbox updates
     {
-      "groupName": "ctfbox stack",
-      "groupSlug": "ctfbox",
-      "labels": ["stack:ctfbox"],
-      "matchManagers": ["dockerfile", "regex"],
-      "matchFileNames": [
-        "dockerfiles/ctfbox.dockerfile",
-        "packages/ctfbox/**",
+      groupName: 'ctfbox stack',
+      groupSlug: 'ctfbox',
+      labels: [
+        'stack:ctfbox',
       ],
-      "separateMajorMinor": false,
-      "prPriority": 9
+      matchManagers: [
+        'dockerfile',
+        'custom.regex',
+      ],
+      matchFileNames: [
+        'dockerfiles/ctfbox.dockerfile',
+        'packages/ctfbox/**',
+      ],
+      separateMajorMinor: false,
+      prPriority: 9,
     },
-  ]
+  ],
 }
-
