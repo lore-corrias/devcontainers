@@ -1,5 +1,5 @@
 # Builder image for yay and yay packages
-FROM docker.io/library/archlinux@sha256:69b59e60bb8594d8c4bf375e9beee186e4b3426ec4f50a65d92e7f36ce5e7113
+FROM docker.io/library/archlinux@sha256:8fe9851fcd8bd23ea0e6bfa99483d8778e40b45e0fd7bb8188c94cbdd8c25a38
 
 ARG USERNAME=lore
 ARG USER_UID=1000
