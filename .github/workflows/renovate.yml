@@ -1,0 +1,22 @@
+name: update-dependencies
+on:
+  workflow_dispatch: # allow manually triggering builds
+  schedule:
+    - cron: '0 0 * * MON'
+
+env:
+    IMAGE_TAGS: latest
+    IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v43.0.13
+        env:
+          RENOVATE_REPOSITORIES: '["lore-corrias/devcontainers"]'
+        with:
+          token: ${{ secrets.RENOVATE_TOKEN }}

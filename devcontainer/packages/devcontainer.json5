@@ -1,0 +1,30 @@
+{
+  // renovate: datasource=repology depName=debian_12/rust-ripgrep versioning=loose
+  "ripgrep": "12.0.0-4",
+  // renovate: datasource=repology depName=debian_12/git versioning=loose
+  "git": "2.39.5-0+deb12u2",
+  // renovate: datasource=repology depName=debian_12/tmux versioning=loose
+  "tmux": "3.2a",
+  // renovate: datasource=repology depName=debian_12/zsh versioning=loose
+  "zsh": "5.8",
+  // renovate: datasource=repology depName=debian_12/nodejs versioning=loose
+  "nodejs": "1.33+dfsg-1.2+deb12u1",
+  // renovate: datasource=repology depName=debian_12/tar versioning=loose
+  "tar": "1.33",
+  // renovate: datasource=repology depName=debian_12/gzip versioning=loose
+  "gzip": "1.11-1",
+  // renovate: datasource=repology depName=debian_12/wget versioning=loose
+  "wget": "1.11.3-1+deb12u1",
+  // renovate: datasource=repology depName=debian_12/npm versioning=loose
+  "npm": "9.1.0~ds1-1",
+  // renovate: datasource=repology depName=debian_12/curl versioning=loose
+  "curl": "7.81.1-10+deb12u14",
+  // renovate: datasource=repology depName=debian_12/sudo versioning=loose
+  "sudo": "1.8.13p3-1+deb12u2",
+  // renovate: datasource=repology depName=debian_12/gcc versioning=loose
+  "gcc": "1.202",
+  "libc6-dev": "",
+  "gpg": "",
+  "locales": "",
+  "fd-find": ""
+}
