@@ -1,5 +1,5 @@
 # Building neovim from src
-FROM debian:bookworm-slim AS nvim-builder
+FROM debian:bookworm-slim@sha256:df52e55e3361a81ac1bead266f3373ee55d29aa50cf0975d440c2be3483d8ed3 AS nvim-builder
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG NVIM_VERSION=v0.11.4
@@ -19,7 +19,7 @@ RUN git clone --depth 1 --branch "${NVIM_VERSION}" https://github.com/neovim/neo
 RUN make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/usr/local -j"$(nproc)" \
   && make install
 
-FROM debian:bookworm-slim
+FROM debian:bookworm-slim@sha256:df52e55e3361a81ac1bead266f3373ee55d29aa50cf0975d440c2be3483d8ed3
 
 ARG USERNAME=lore
 ARG USER_UID=1000
