@@ -1,0 +1,13 @@
+{
+  "name": "devcontainer-dc",
+  "image": "ghcr.io/lore-corrias/devcontainer:latest",
+  "service": "devcontainer-dc",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,z,rw",
+  "workspaceFolder": "/workspace",
+  "runArgs": [
+    "--name",
+    "devcontainer-dc"
+  ],
+  "remoteUser": "",
+  "onCreateCommand": ""
+}

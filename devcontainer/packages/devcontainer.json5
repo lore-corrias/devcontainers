@@ -1,0 +1,18 @@
+[
+  "ripgrep",
+  "git",
+  "tmux",
+  "zsh",
+  "nodejs",
+  "tar",
+  "gzip",
+  "wget",
+  "npm",
+  "curl",
+  "sudo",
+  "gcc",
+  "libc6-dev",
+  "gpg",
+  "locales",
+  "fd-find"
+]

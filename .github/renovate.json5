@@ -1,0 +1,49 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":automergeStableNonMajor",
+    ":combinePatchMinorReleases",
+    ":enableVulnerabilityAlerts"
+  ],
+  "branchPrefix": "dependencies/",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^.*\\/packages\\/.*\\.json5$/"],
+      "matchStrings": [
+        "\\/\\/\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*\".*\"\\s*:\\s*\"(?<currentValue>.*)\"\\s*"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
+
+  // grouping all kind of updates for images in single PRs
+  "packageRules": [
+    // devcontainer updates
+    {
+      "groupName": "devcontainer stack",
+      "groupSlug": "devcontainer",
+      "labels": ["stack:devcontainer"],
+      "matchManagers": ["dockerfile", "regex"],
+      "matchFileNames": [
+        "devcontainer/**",
+      ],
+      "separateMajorMinor": false,
+      "prPriority": 10
+    },
+    // ctfbox updates
+    {
+      "groupName": "ctfbox stack",
+      "groupSlug": "ctfbox",
+      "labels": ["stack:ctfbox"],
+      "matchManagers": ["dockerfile", "regex"],
+      "matchFileNames": [
+        "ctfbox/**",
+      ],
+      "separateMajorMinor": false,
+      "prPriority": 9
+    },
+  ]
+}
+
