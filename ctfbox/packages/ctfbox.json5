@@ -1,50 +1,25 @@
-{
-  // renovate: datasource=repology depName=arch/chromium versioning=loose
-  "chromium": "136.0.7103.59-1",
-  // renovate: datasource=repology depName=arch/eza versioning=loose
-  "eza": "0.21.3-1",
-  // renovate: datasource=repology depName=arch/fd versioning=loose
-  "fd": "10.2.0-1",
-  // renovate: datasource=repology depName=arch/git versioning=loose
-  "git": "2.50.0",
-  // renovate: datasource=repology depName=arch/go versioning=loose
-  // "go": "2.49.0-1",
-  // renovate: datasource=repology depName=arch/inetutils versioning=loose
-  "inetutils": "2.6-1",
-  // renovate: datasource=repology depName=arch/jre21-openjdk versioning=loose
-  "jre21-openjdk": "21.0.7.u6-1",
-  // renovate: datasource=repology depName=arch/lsof versioning=loose
-  "lsof": "4.99.4-1",
-  // renovate: datasource=repology depName=arch/man-db versioning=loose
-  "man-db": "2.13.1-1",
-  // renovate: datasource=repology depName=arch/man-pages versioning=loose
-  "man-pages": "6.13-1",
-  // renovate: datasource=repology depName=arch/neovim versioning=loose
-  "neovim": "0.11.1-2",
-  // renovate: datasource=repology depName=arch/nmap versioning=loose
-  "nmap": "7.95-1",
-  // renovate: datasource=repology depName=arch/nodejs versioning=loose
-  "nodejs": "23.9.0-1",
-  // renovate: datasource=repology depName=arch/npm versioning=loose
-  "npm": "11.3.0-1",
-  // renovate: datasource=repology depName=arch/ripgrep versioning=loose
-  "ripgrep": "14.1.1-1",
-  // renovate: datasource=repology depName=arch/tcpdump versioning=loose
-  "tcpdump": "4.99.5-1",
-  // renovate: datasource=repology depName=arch/tmux versioning=loose
-  "tmux": "3.5_a-1",
-  // renovate: datasource=repology depName=arch/traceroute versioning=loose
-  "traceroute": "2.1.6-1",
-  // renovate: datasource=repology depName=arch/tree versioning=loose
-  "tree": "2.2.1-1",
-  // renovate: datasource=repology depName=arch/unzip versioning=loose
-  "unzip": "6.0-22",
-  // renovate: datasource=repology depName=arch/uv versioning=loose
-  "uv": "0.7.2-1",
-  // renovate: datasource=repology depName=arch/wget versioning=loose
-  "wget": "1.25.0-2",
-  // renovate: datasource=repology depName=arch/zip versioning=loose
-  "zip": "3.0-11",
-  // renovate: datasource=repology depName=arch/zsh versioning=loose
-  "zsh": "5.9-5",
-}
+[
+  "chromium",
+  "eza",
+  "fd",
+  "git",
+  "inetutils",
+  "jre21-openjdk",
+  "lsof",
+  "man-db",
+  "man-pages",
+  "neovim",
+  "nmap",
+  "nodejs",
+  "npm",
+  "ripgrep",
+  "tcpdump",
+  "tmux",
+  "traceroute",
+  "tree",
+  "unzip",
+  "uv",
+  "wget",
+  "zip",
+  "zsh"
+]
