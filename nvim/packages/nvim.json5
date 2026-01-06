@@ -1,0 +1,13 @@
+[
+  // required for builds
+  "gcc",
+  "make",
+  "clang",
+  "clang-tools-extra",
+  // languages
+  "python3",
+  "python3-pip",
+  "nodejs",
+  // misc for plugins
+  "git"
+]

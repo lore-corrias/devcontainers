@@ -21,5 +21,6 @@
   "uv",
   "wget",
   "zip",
-  "zsh"
+  "zsh",
+  "burpsuite"
 ]
