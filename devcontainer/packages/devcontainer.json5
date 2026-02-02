@@ -11,8 +11,10 @@
   "curl",
   "sudo",
   "gcc",
-  "libc6-dev",
-  "gpg",
-  "locales",
-  "fd-find"
+  "glibc-devel",
+  "gnupg",
+  "glibc-langpack-en",
+  "fd-find",
+  "glibc-langpack-en",
+  "neovim"
 ]
