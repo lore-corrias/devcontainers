@@ -21,11 +21,8 @@ RUN /scripts/generate-locale.sh
 ENV LANG=en_US.UTF-8
 ENV LANGUAGE=en_US:en
 
-# Add capabilities to specific binaries
-# RUN /scripts/add-caps.sh
-
-# Add non root user
-# RUN /scripts/add-user.sh
+# Add conda envs
+RUN /scripts/create-conda-envs.sh
 
 LABEL com.github.containers.toolbox="true" \
   usage="Use this image with distrobox / podman to have a working environment for solving CTF challenges" \
