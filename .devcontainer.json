@@ -1,13 +1,45 @@
 {
-  "name": "devcontainer-dc",
-  "image": "ghcr.io/lore-corrias/devcontainer:latest",
-  "service": "devcontainer-dc",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,z,rw",
+  "name": "devcontainers-dc",
+  "image": "debian:bookworm-slim",
+  "service": "devcontainers-dc",
   "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "upgradePackages": true,
+      "installOhMyZsh": false,
+      "installOhMyZshConfig": false,
+      "username": "none"
+    },
+  },
+  "containerEnv": {
+    "LANG": "en_US.UTF-8",
+    "LANGUAGE": "en_US:en",
+    "CONTAINER_HOST": "unix:///var/run/podman.sock"
+  },
   "runArgs": [
-    "--name",
-    "devcontainer-dc"
+    "--cap-add=CAP_MKNOD",
+    "--cap-add=NET_ADMIN",
+    "--cap-add=SYS_ADMIN",
+    "--cap-add=SYS_RESOURCE",
+    "--device",
+    "/dev/fuse",
+    "--device",
+    "/dev/kvm",
+    "--security-opt",
+    "seccomp=unconfined",
+    "--security-opt",
+    "label=disable",
+    "--security-opt",
+    "apparmor=unconfined",
+    "--userns=host",
+    "-v",
+    "/run/user/1000/podman/podman.sock:/var/run/podman.sock:Z",
+    "--hostname=devcontainers-dc",
+    "--add-host",
+    "host.containers.internal:host-gateway"
   ],
-  "remoteUser": "",
-  "onCreateCommand": ""
+  "remoteUser": "root",
+  "containerUser": "root"
 }
